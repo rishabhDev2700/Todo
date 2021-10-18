@@ -3,8 +3,24 @@
 Register
 {% endblock %}
 {% block content %}
-<form action="{% url 'create_user' %}">
-{% for field in form %}
-    <div class="form-"
-</form>
+<div class="col-3">
+    <form action="{% url 'create_user' %}" method="post" class="container-fluid m-5">
+        {% csrf_token %}
+        <label class="form-label">First Name</label>
+        <div class="form-control"><input type="text" class="form-control" name="first_name"></div>
+        <label class="form-label">Last Name</label>
+        <div class="form-control"><input type="text" class="form-control" name="last_name"></div>
+        <label class="form-label">Username</label>
+        <div class="form-control"><input type="text" class="form-control" name="username"></div>
+        <label class="form-label">Email</label>
+        <div class="form-control"><input type="email" class="form-control" name="email"></div>
+        <label class="form-label">Password</label>
+        <div class="form-control"><input type="password" class="form-control" name="password"></div>
+        <label class="form-label">Confirm Password</label>
+        <div class="form-control"><input type="password" class="form-control"></div>
+        <div class="m-3">
+            <input type="submit" value="Register" class="btn btn-success p-3">
+        </div>
+    </form>
+</div>
 {% endblock %}
